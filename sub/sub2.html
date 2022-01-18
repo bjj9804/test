@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>LG생활건강</title>
+	<link rel="stylesheet" type="text/css" href="../css/general.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css" />
+	<!--[if IE]>
+		<script type="text/javascript">
+			var console = { log: function() {} };
+		</script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/layout.js"></script>
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker();
+            $( ".datepicker" ).datepicker("option", "dateFormat", "yy-mm-dd");
+
+            $(".slide_button").click(function() {
+                $(this).parents("ul").addClass("on");
+            })
+            
+            $(".right_bar").click(function() {
+                $(this).parents("ul").removeClass("on");
+            })
+
+            $( ".datepicker1" ).datepicker();
+            $( ".datepicker1" ).datepicker("option", "dateFormat", "yy.mm.dd");
+        } );
+    </script>
+</head>
+<body>
+    <div id="modal"></div>
+    <div id="wrap">
+        <div id="gnb">
+            <span class="menu"></span>
+            <ul class="depth1">
+                <li>
+                    <i class="ico01"></i>
+                    <a href="#" class="title">Dashboard</a>
+                </li>
+                <li>
+                    <i class="ico02"></i>
+                    <span class="title">정형분석</span>
+                    <ul class="depth2">
+                        <li>
+                            <span class="depth2_title">매출분석</span>
+                            <ul class="depth3">
+                                <li>
+                                    <span class="depth3_title">채널</span>
+                                    <ul class="depth4">
+                                        <li><a href="#">- 월별 매출종합</a></li>
+                                        <li><a href="#">- 월별 매출현황</a></li>
+                                        <li><a href="#">- 월별 매출추이</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="depth3_title">제품</span>
+                                    <ul class="depth4">
+                                        <li><a href="#">- 월별 제품매출추이</a></li>
+                                        <li><a href="#">- 월별 제품매출현황</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="depth3_title">주문</span>
+                                    <ul class="depth4">
+                                        <li><a href="#">- 일별 주문건수</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="depth2_title">재고분석</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="ico03"></i>
+                    <span class="title">시각화분석</span>
+                </li>
+                <li>
+                    <i class="ico04"></i>
+                    <span class="title">비정형분석</span>
+                </li>
+                <li>
+                    <i class="ico05"></i>
+                    <span class="title">내리포트</span>
+                </li>
+                <li>
+                    <i class="ico06"></i>
+                    <span class="title">게시판</span>
+                </li>
+                <li>
+                    <i class="ico07"></i>
+                    <span class="title">관리자</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="main_content">
+            <div id="header">
+                <h1><a href="#"><img src="../images/common/logo.png" alt="LG생활건강 온라인 영업분석 시스템 구축"></a></h1>
+                <ul class="user">
+                    <li>
+                        <img src="../images/common/user.png">
+                        <span>홍길동(admin)</span>
+                    </li>
+                    <li>
+                        <button><img src="../images/common/logout.png"></button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="content">
+                <h2>딜별 예측 비용분석</h2>
+                <ul class="navi">
+                    <li>Dashboard</li>
+                    <li>정형분석</li>
+                    <li>채널</li>
+                    <li class="on">딜별 예측 비용분석</li>
+                </ul>
+
+                <div class="search">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <span class="title">기준일자</span>
+                                <input type="text" class="datepicker">
+                                
+                            </div>
+                        </li>
+                        <li style="border:0px none">
+                            <div class="box">
+                                <em>~</em>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <input type="text" class="datepicker">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <span class="title">사업부</span>
+                                <select>
+                                    <option value="all">ALL</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <span class="title">영업부문</span>
+                                <select>
+                                    <option value="all">ALL</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <span class="title">영업팀</span>
+                                <select>
+                                    <option value="all">ALL</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <button><span>조회</span></button>
+                        </li>
+                    </ul>
+
+                    <div class="btn_wrap">
+                        <button><img src="../images/common/btn1.png"></button>
+                        <button><img src="../images/common/btn2.png"></button>
+                    </div>
+                </div>
+
+                <div class="sub_content">
+                    <div class="table_wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="gray" scope="col">마감년월</th>
+                                    <th class="gray" scope="col">팀</th>
+                                    <th class="gray" scope="col">어카운트</th>
+                                    <th class="gray" scope="col">딜</th>
+                                    <th class="gray" scope="col">매출금액</th>
+                                    <th class="gray" scope="col">비용계</th>
+                                    <th class="gray" scope="col">진척율</th>
+                                    <th class="gray" scope="col">진척율</th>
+                                    <th class="black" scope="col">예산</th>
+                                    <th class="black" scope="col">예산구분</th>
+                                    <th class="black" scope="col">광고비</th>
+                                    <th class="black" scope="col">쿠폰비</th>
+                                    <th class="black" scope="col">판촉비</th>
+                                    <th class="black" scope="col">무상품</th>
+                                    <th class="black" scope="col">기타</th>
+                                    <th class="black" scope="col">시작일</th>
+                                    <th class="black" scope="col">시작일</th>
+                                    <th class="black" scope="col">수정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="..."></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><button class="save"><span>저장</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify1"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="..."></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><button class="save"><span>저장</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify1"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="..."></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><button class="save"><span>저장</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify1"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="..."></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><button class="save"><span>저장</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify1"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify"><span>수정</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="..."></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="1,000"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><input type="text" value="20211205" class="datepicker1"></td>
+                                    <td><button class="save"><span>저장</span></button></td>
+                                </tr>
+                                <tr>
+                                    <td>202012</td>
+                                    <td>HDB 디지털KA1팀</td>
+                                    <td>네이버</td>
+                                    <td>페리오 토탈7 오리지널 치약 120g x 3</td>
+                                    <td>496,500 </td>
+                                    <td>3,000</td>
+                                    <td>100%</td>
+                                    <td>100%</td>
+                                    <td>3,000</td>
+                                    <td>마케팅</td>
+                                    <td>1,000</td>
+                                    <td>2,000</td>
+                                    <td>2,000</td>
+                                    <td>10</td>
+                                    <td>0</td>
+                                    <td>2020.12.05</td>
+                                    <td>2020.12.05</td>
+                                    <td><button class="modify1"><span>수정</span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <a href="#" class="prev end"></a>
+                        <a href="#" class="prev"></a>
+                        <a href="#" class="on">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                        <a href="#">10</a>
+                        <a href="#" class="next"></a>
+                        <a href="#" class="next end"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <p>2021 &copy; LG Household & Health Care</p>
+            </div>
+        </div>
+
+        <div class="popup_wrap popup01">
+            <div class="title">
+                <p>달별 예측비용분석 엑셀 업로드</p>
+                <div class="btn_area">
+                    <button class="btn1"></button>
+                    <button class="btn2"></button>
+                    <button class="btn3"></button>
+                </div>
+            </div>
+            <div class="pop_con">
+                <ul>
+                    <li>엑셀 업로드 시 기존 데이터를 삭제 후 등록 합니다. (월별, 딜, 예산구분 기준)</li>
+                    <li>기존 데이터를 엑셀다운로드 이후 작성하여 업로드 하십시오.</li>
+                    <li>사용자가 임의로 엑셀 형식을 변경하거나 수식을 사용 시 업로드 오류가 있을 수 있습니다. </li>
+                </ul>
+                <div class="file">
+                    <span class="title">파일명</span>
+                    <div class="file_box">
+                        <input type="text">
+                        <input type="file">
+                    </div>
+                </div>
+
+                <div class="btn_wrap">
+                    <button class="btn1">업로드</button>
+                    <button class="btn2">취소</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="popup_wrap popup02" style="display: none;">
+            <div class="title">
+                <p>달별 예측비용분석 엑셀 업로드</p>
+                <div class="btn_area">
+                    <button class="btn1"></button>
+                    <button class="btn2"></button>
+                    <button class="btn3"></button>
+                </div>
+            </div>
+            <div class="pop_con">
+                <table>
+                    <colgroup>
+                        <col style="width:100px;">
+                        <col />
+                    </colgroup>
+                    <tr>
+                        <th scope="col">파일명</th>
+                        <td>딜별예측비용분석21년12월.xlxs</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">업로드 건수</th>
+                        <td>3,201</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">작업일시</th>
+                        <td>2021-09-17   15:30</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">성공여부</th>
+                        <td class="red">실패</td>
+                    </tr>
+                </table>
+                <div class="error_log">
+
+                </div>
+                <div class="btn_wrap">
+                    <button class="btn2">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
